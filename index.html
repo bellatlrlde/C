@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Protected Page</title>
+  <style>
+    body {
+      background-color: #f8c8e4; /* Soft pink background */
+      font-family: 'Arial', sans-serif;
+      color: #d63e89; /* Dark pink for text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.8); /* White with opacity for a soft effect */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #d63e89;
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 20px;
+      border: 2px solid #d63e89;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #d63e89;
+      outline: none;
+    }
+    input[type="password"]:focus {
+      border-color: #ff6ec7; /* Light pink border when focused */
+    }
+    button {
+      background-color: #d63e89;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff6ec7; /* Light pink hover effect */
+    }
+    .clue {
+      font-size: 16px;
+      margin-top: 20px;
+      color: #ff6ec7;
+    }
+  </style>
+  <script type="text/javascript">
+    function validatePassword() {
+      var password = document.getElementById("password").value;
+      if (password === "012925") {
+        window.location.href = "main.html";  // Redirect to the main page if password is correct
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter the password to continue...</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="validatePassword()">Submit</button>
+    <p class="clue">Clue: The day an egg cracked, a very special day. Hint: "girlfriend"</p>
+  </div>
+</body>
+</html>
